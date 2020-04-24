@@ -33,7 +33,6 @@ func IsWindows() bool {
 // DownloadAndUnzip downloads the zip file from given download link and unzips it.
 // Returns the unzipped file path.
 func DownloadAndUnzip(downloadLink string, tempDir string) (string, error) {
-	logger.Infof(true, "Downloading %s", filepath.Base(downloadLink))
 	logger.Debugf(true, "Download URL %s", downloadLink)
 	downloadedFile, err := Download(downloadLink, tempDir, "", false)
 	if err != nil {
