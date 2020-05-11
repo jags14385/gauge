@@ -44,7 +44,7 @@ type templateMetadata struct {
 	PostInstallMsg string
 }
 
-func initializeTemplate(templateName string, templateUrl string) error {
+func initializeTemplate(templateName, templateUrl string) error {
 	tempDir := common.GetTempDir()
 	defer util.Remove(tempDir)
 	logger.Infof(true, "Initializing template from %s", templateUrl)
@@ -294,8 +294,5 @@ func createManifestFile(language string) error {
 		showMessage("skip", common.ManifestFile)
 	}
 	manifest := &manifest.Manifest{Language: language, Plugins: defaultPlugins}
-	if err := manifest.Save(); err != nil {
-		return err
-	}
-	return nil
+	return manifest.Save()
 }

@@ -32,7 +32,7 @@ func IsWindows() bool {
 
 // DownloadAndUnzip downloads the zip file from given download link and unzips it.
 // Returns the unzipped file path.
-func DownloadAndUnzip(downloadLink string, tempDir string) (string, error) {
+func DownloadAndUnzip(downloadLink, tempDir string) (string, error) {
 	logger.Debugf(true, "Download URL %s", downloadLink)
 	downloadedFile, err := Download(downloadLink, tempDir, "", false)
 	if err != nil {
@@ -42,7 +42,7 @@ func DownloadAndUnzip(downloadLink string, tempDir string) (string, error) {
 
 	unzippedPluginDir, err := common.UnzipArchive(downloadedFile, tempDir)
 	if err != nil {
-		return "", fmt.Errorf("Failed to Unzip file %s: %s", downloadedFile, err.Error())
+		return "", fmt.Errorf("failed to unzip file %s: %s", downloadedFile, err.Error())
 	}
 	logger.Debugf(true, "Unzipped to => %s\n", unzippedPluginDir)
 
