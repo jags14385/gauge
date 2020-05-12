@@ -132,7 +132,7 @@ func List(machineReadable bool) (string, error) {
 
 func defaults() *templates {
 	return &templates{t: map[string]*config.Property{
-		"dotnet":              getProperty("template-dotnet", "dontet"),
+		"dotnet":              getProperty("template-dotnet", "dotnet"),
 		"java":                getProperty("template-java", "java"),
 		"java_gradle":         getProperty("template-java-gradle", "java_gradle"),
 		"java_maven":          getProperty("template-java-maven", "java_maven"),

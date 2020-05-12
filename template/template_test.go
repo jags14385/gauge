@@ -17,8 +17,8 @@ import (
 var templatesContent = "# Version " + version.CurrentGaugeVersion.String() + `
 # This file contains Gauge template configurations. Do not delete
 
-# Template download information for gauge dontet projects
-dontet = https://github.com/getgauge/template-dotnet/releases/latest/download/dontet.zip
+# Template download information for gauge dotnet projects
+dotnet = https://github.com/getgauge/template-dotnet/releases/latest/download/dotnet.zip
 
 # Template download information for gauge java projects
 java = https://github.com/getgauge/template-java/releases/latest/download/java.zip
@@ -64,7 +64,7 @@ func TestUpdateShouldAddTemplateIfDoesNotExistss(t *testing.T) {
 	}
 }
 
-func TestUpdateShouldGetTemplateIfDoesNotExists(t *testing.T) {
+func TestGetShouldGetTemplateIfDoesNotExists(t *testing.T) {
 	temp := &templates{
 		t: map[string]*config.Property{},
 	}
@@ -74,7 +74,7 @@ func TestUpdateShouldGetTemplateIfDoesNotExists(t *testing.T) {
 	}
 }
 
-func TestUpdateShouldGetTemplateIfExists(t *testing.T) {
+func TestGetShouldGetTemplateIfExists(t *testing.T) {
 	temp := &templates{
 		t: map[string]*config.Property{
 			"hello": config.NewProperty("hello", "/foo/bar", ""),

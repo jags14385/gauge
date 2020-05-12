@@ -170,7 +170,7 @@ func validateDirectory() {
 }
 
 func checkURLSecurity(templateURL string) {
-	u, err := url.Parse(templateURL)
+	u, err := url.ParseRequestURI(templateURL)
 	if err != nil {
 		logger.Fatalf(true, "Failed to parse URL '%s'.  %s", templateURL, err.Error())
 	}
